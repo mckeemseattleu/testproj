@@ -1,8 +1,14 @@
+package generic;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.*;
-public class helloTest
+public class TestGenericQueue
 {
 
+    /**
+     * This will test if the method is not empty for a String. Because three variables are loaded
+     * in here, it should assert a False on it being empty
+     */
     @Test
     void testQueueNotEmptyString()
     {
@@ -10,7 +16,7 @@ public class helloTest
         stringQue.enqueue("I");
         stringQue.enqueue("love");
         stringQue.enqueue("dogs");
-        Assertions.assertEquals(false, stringQue.empty());
+        Assertions.assertFalse(stringQue.empty());
     }
 
     @Test
@@ -20,7 +26,7 @@ public class helloTest
         doubleQue.enqueue(1.2);
         doubleQue.enqueue(2.2);
         doubleQue.enqueue(3.2);
-        Assertions.assertEquals(false, doubleQue.empty());
+        Assertions.assertFalse(doubleQue.empty());
     }
 
 
@@ -55,7 +61,7 @@ public class helloTest
     @Test
     void testEnqueueDequeueString()
     {
-        Queue<String>  stringQue = new Queue<>();
+        Queue<String> stringQue = new Queue<>();
         stringQue.enqueue("John");
         Assertions.assertEquals("John", stringQue.dequeue());
     }
@@ -63,7 +69,7 @@ public class helloTest
     @Test
     void testEnqueueDequeueDouble()
     {
-        Queue<Double>  doubleQue = new Queue<>();
+        Queue<Double> doubleQue = new Queue<>();
         doubleQue.enqueue(3.14);
         Assertions.assertEquals(3.14, doubleQue.dequeue());
     }
@@ -126,7 +132,7 @@ public class helloTest
         integerQue.enqueue(2);
         Queue<Integer> copyQueue = integerQue.copy();
         // dequeue the first one and see if it is right
-        Assertions.assertEquals(true, integerQue.equals(copyQueue));
+        Assertions.assertTrue(integerQue.equals(copyQueue));
 
     }
 
@@ -142,7 +148,7 @@ public class helloTest
         Queue<Integer> copyQueue = integerQue.copy();
         integerQue.enqueue(3);
         // dequeue the first one and see if it is right
-        Assertions.assertNotEquals(true, integerQue.equals(copyQueue));
+        Assertions.assertFalse(integerQue.equals(copyQueue));
     }
 
     @Test
@@ -158,7 +164,7 @@ public class helloTest
         integerQue.enqueue(3);
         copyQueue.enqueue(4);
         // dequeue the first one and see if it is right
-        Assertions.assertNotEquals(true, integerQue.equals(copyQueue));
+        Assertions.assertFalse(integerQue.equals(copyQueue));
     }
 
 
@@ -225,6 +231,4 @@ public class helloTest
         Assertions.assertEquals("4",stringQue.dequeue());
 
     }
-
-
  }

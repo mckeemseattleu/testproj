@@ -1,3 +1,4 @@
+package generic;
 
 public class Queue<E> {
     // front of the queue
