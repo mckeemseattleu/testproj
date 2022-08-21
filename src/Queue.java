@@ -127,18 +127,19 @@ public class Queue<E> {
 
         for (Node i = head; i != null; i = i.next) {
             sb.append(i.data);
+            sb.append(";");
         }
         return sb.toString();
     }
 
     /**
      * Appends a copy of the given queue onto the current queue.
-     * @param render A RenderQueue object
+     * @param appendQueue A RenderQueue object
      */
-    public void append(Queue<E> append) {
+    public void append(Queue<E> appendQueue) {
         Queue<E> myCopy;     //address to a copy of RenderQueue
 
-        myCopy = append.copy();
+        myCopy = appendQueue.copy();
         while (myCopy.head != null) {
             this.enqueue(myCopy.head.data);
             myCopy.head = myCopy.head.next;
