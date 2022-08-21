@@ -3,7 +3,7 @@ package generic;
 public class Queue<E> {
     // front of the queue
     private Node head;
-    // rear of the queue
+    // rear of the queue . Good name
     private Node tail;
 
     /**
@@ -121,7 +121,7 @@ public class Queue<E> {
      * Returns String representation of a RenderQueue object
      * @return String representation of a RenderQueue object
      * @throws IllegalArgumentException there is an invalid RenderCommand
-     * @override overrides toString method
+
      */
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -167,7 +167,7 @@ public class Queue<E> {
         }
 
 
-        if (p == null && p2 == null)
+        if ((p == null) && (p2 == null))
             return true;
         else
             return false;
