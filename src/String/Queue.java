@@ -1,5 +1,7 @@
 package String;
 
+import java.util.EmptyStackException;
+
 public class Queue {
     // front of the queue
     private Node head;
@@ -216,9 +218,11 @@ public class Queue {
         boolean found = false;
         Queue retQueue = new Queue();
 
-        while ((found == false) && (valString = stack.peek()) != null)
+
+        while ((found == false) && (!stack.empty()))
         {
             // Compare, and if not equal, put in in queue
+            valString = stack.peek();
             if (valString.equals(upTo))
                 found = true;
             else
@@ -227,6 +231,9 @@ public class Queue {
                 retQueue.enqueue(valString);
             }
         }
+
+        if (!found)
+            throw new EmptyStackException();
 
         return retQueue;
     }

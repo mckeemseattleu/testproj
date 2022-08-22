@@ -145,7 +145,7 @@ public class TestStringQueue
         stringStack.push("Tom");
         stringStack.push("Ana");
         stringStack.push("Chen");
-        retQueue = Queue.removeTopOfStack(stringStack,"Ana");
+        retQueue = Queue.removeTopOfStack(stringStack,"Ana1");
         // check the queue to see that there are two items
         Assertions.assertEquals("Chen",retQueue.dequeue());
     }
